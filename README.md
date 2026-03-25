@@ -7,7 +7,7 @@ AutoCode 插件的 Claude Code Marketplace 分发仓库。
 ### 1. 添加 Marketplace
 
 ```bash
-/plugin marketplace add git@gitlab.allcam.com.cn:dev-flow/autocode-marketplace.git
+
 ```
 
 ### 2. 安装插件
