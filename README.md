@@ -1,3 +1,32 @@
+# PMS 测试用例生成技能 v1.1
+
+技能目录：`pms-test-case-authoring/`。支持根据 PMS 或本地需求设计用例、初始化公用模板、校验 JSON、生成固定 31 列 Excel/CSV 和 PMS 映射。仅做本地文件生成；不会自行写入 PMS 或执行业务测试。
+
+## 安装
+
+克隆本仓库后，将完整 `pms-test-case-authoring` 目录复制到 `~/.codex/skills/`；Claude Code 用户可复制到 `~/.claude/skills/`。已有版本先备份，不混合覆盖。Python 需 3.10+，Excel 生成依赖 openpyxl；按需在自己的虚拟环境安装技能目录内 requirements.txt。
+
+新建会话后调用：
+
+> 使用 $pms-test-case-authoring，根据 PMS 需求〈需求编号〉生成用例，输出到〈测试用例目录〉。
+
+## 本地工具示例
+
+从仓库根目录运行，示例数据仅用于验证工具，不是真实需求用例：
+
+```bash
+python pms-test-case-authoring/scripts/case_tools.py doctor
+python pms-test-case-authoring/scripts/case_tools.py init --workspace ./demo-workspace
+python pms-test-case-authoring/scripts/case_tools.py validate --input pms-test-case-authoring/assets/cases.example.json
+python pms-test-case-authoring/scripts/case_tools.py build --input pms-test-case-authoring/assets/cases.example.json --output-dir ./demo-workspace/DEMO-00001
+```
+
+再次生成请使用新的输出目录，工具拒绝覆盖历史。PMS 使用接收方自己的登录和权限；本包不包含凭据或实际需求资料。
+
+---
+
+以下保留原有 AutoCode 安装说明。
+
 # AutoCode 插件离线安装指南
 
 适用于无法访问外网或内网 GitLab 的环境，通过手动复制缓存文件完成安装。
