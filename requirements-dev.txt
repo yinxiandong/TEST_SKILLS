@@ -1,0 +1,2 @@
+# Repository validation only; skills keep their own runtime dependencies.
+PyYAML>=6.0,<7

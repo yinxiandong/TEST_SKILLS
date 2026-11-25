@@ -1,0 +1,16 @@
+# Local installation records and generated examples
+/README.local.md
+/demo-workspace/
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
